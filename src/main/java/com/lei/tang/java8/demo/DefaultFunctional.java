@@ -1,5 +1,6 @@
 package com.lei.tang.java8.demo;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.*;
 
@@ -74,5 +75,36 @@ public class DefaultFunctional {
 
     public static <T, U> void biConsumer(T t, U u, BiConsumer<T, U> biConsumer) {
         biConsumer.accept(t, u);
+    }
+
+    public void sort(){
+        // 数值排序
+        List<Integer> list = Lists.newArrayList(3, 1, 2, -1);
+        // 正序
+        list.sort(Integer::compareTo);
+        list.forEach((i) -> System.out.println(i));
+        // 倒叙
+        list.sort(Comparator.reverseOrder());
+        list.forEach((i) -> System.out.println(i));
+        // 正序
+        list.sort(Comparator.naturalOrder());
+        list.forEach((i) -> System.out.println(i));
+
+        // 根据对象的某个属性排序
+        Orange orange = new Orange();
+        orange.setWeight(1.34);
+        Orange orange1 = new Orange();
+        orange1.setWeight(1.2);
+        Orange orange2 = new Orange();
+        orange2.setWeight(2.34);
+        List<Orange> list1 = Lists.newArrayList(orange, orange1, orange2);
+        // 正序
+        list1.sort((Orange s, Orange o) -> s.getWeight() > o.getWeight() ? 1 : s.getWeight() == o.getWeight() ? 0 : -1);
+        // 2.34-1.34-1.2
+        list1.forEach((o) -> System.out.println(o.getWeight()));
+        // 倒叙
+        list1.sort((Orange s, Orange o) -> o.getWeight() > s.getWeight() ? 1 : o.getWeight() == s.getWeight() ? 0 : -1);
+        //1.2-1.34-2.34
+        list1.forEach((o) -> System.out.println(o.getWeight()));
     }
 }

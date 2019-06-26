@@ -36,9 +36,9 @@ public class DefaultFunctional {
 
         System.out.println(biPredicate("a", "b", (String s1, String s2) -> s1.equals(s2)));
         Orange orange1 = new Orange();
-        orange1.setWeight(10);
+        orange1.setWeight(10.00);
         Orange orange2 = new Orange();
-        orange2.setWeight(10);
+        orange2.setWeight(10.00);
         biConsumer(orange1, orange2,
                 (Orange orange11, Orange orange22) -> orange11.setWeight(orange11.getWeight()+orange22.getWeight()));
         System.out.println(orange1.getWeight());
@@ -99,12 +99,20 @@ public class DefaultFunctional {
         orange2.setWeight(2.34);
         List<Orange> list1 = Lists.newArrayList(orange, orange1, orange2);
         // 正序
-        list1.sort((Orange s, Orange o) -> s.getWeight() > o.getWeight() ? 1 : s.getWeight() == o.getWeight() ? 0 : -1);
+        // weight属性为基本类型
+        list1.sort((Orange s, Orange o) -> s.getWeight() > o.getWeight() ? 1 : s.getWeight().doubleValue() == o.getWeight().doubleValue() ? 0 :
+                -1);
+        // weight属性为封装类型
+        list1.sort((o1,o2)->o1.getWeight().compareTo(o2.getWeight()));
         // 2.34-1.34-1.2
         list1.forEach((o) -> System.out.println(o.getWeight()));
         // 倒叙
-        list1.sort((Orange s, Orange o) -> o.getWeight() > s.getWeight() ? 1 : o.getWeight() == s.getWeight() ? 0 : -1);
+        // weight属性为基本类型
+        list1.sort((Orange s, Orange o) -> o.getWeight() > s.getWeight() ? 1 : o.getWeight().doubleValue() == s.getWeight().doubleValue() ? 0 : -1);
+        // weight属性为封装类型
+        list1.sort((o1,o2)->o2.getWeight().compareTo(o1.getWeight()));
         //1.2-1.34-2.34
+        list1.sort((Orange s, Orange o) -> o.getWeight().compareTo(s.getWeight()));
         list1.forEach((o) -> System.out.println(o.getWeight()));
     }
 }

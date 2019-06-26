@@ -1,7 +1,6 @@
 package com.lei.tang.java8.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * @author tanglei
@@ -9,9 +8,13 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class Orange {
 
-    private double weight;
+    @NonNull
+    private Double weight;
 
     private String color;
 }

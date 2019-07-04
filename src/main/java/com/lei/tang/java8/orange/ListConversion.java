@@ -17,7 +17,7 @@ public class ListConversion {
     public static void main(String[] args) {
         List<Orange> list = Lists.newArrayList(new Orange(10.00, "red"), new Orange(100.00, "red"), new Orange(20.00,
                 "green"));
-        listConversionToSet(Lists.newArrayList(1,2,1,2));
+        listConversionToSet(list);
     }
 
     public static void listConversionToMap(List<Orange> list) {
@@ -34,7 +34,8 @@ public class ListConversion {
         Map<String, List<Orange>> colorForOranges = list.stream().collect(Collectors.groupingBy(Orange::getColor));
     }
 
-    public static void listConversionToSet(List<Integer> list) {
-        Set<Integer> set = list.stream().collect(Collectors.toSet());
+    public static void listConversionToSet(List<Orange> list) {
+        Set<String> colorSet = list.stream().map((orange) -> orange.getColor()).collect(Collectors.toSet());
+        Set<Orange> set = list.stream().collect(Collectors.toSet());
     }
 }

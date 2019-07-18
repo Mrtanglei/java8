@@ -13,7 +13,7 @@ public class ConsumerQueueThread implements Runnable {
 
     @Override
     public void run() {
-        log.info("start thread [{}] time [{}]",i++,System.currentTimeMillis());
-        log.info("queue size [{}]",ThreadPoolManager.getThreadPool().getThreadPoolExecutor().getQueue().size());
+        log.info("start thread [{}] time [{}]", i++, System.currentTimeMillis());
+        log.info("queue size [{}]", ThreadPoolManager.getThreadPool().getThreadPoolExecutor().getQueue().size());
     }
 }

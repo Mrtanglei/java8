@@ -35,7 +35,7 @@ public class ThreadPoolManager {
                     int cpuNum = Runtime.getRuntime().availableProcessors();
                     // 根据cpu数量,计算出合理的线程并发数
                     int threadNum = cpuNum * 2;
-                    log.info("cpuNum [{}]，threadNum [{}]", cpuNum,threadNum);
+                    log.info("cpuNum [{}]，threadNum [{}]", cpuNum, threadNum);
                     threadPool = new ThreadPool(threadNum, threadNum, 0L);
                 }
             }

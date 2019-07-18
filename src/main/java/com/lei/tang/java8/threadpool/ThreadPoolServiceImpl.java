@@ -14,7 +14,7 @@ public class ThreadPoolServiceImpl implements ThreadPoolService {
     @Override
     public boolean testExcuteThread(int threadNumber) {
         log.info("start testExcuteThread");
-        for (int i = 0;i<threadNumber;i++){
+        for (int i = 0; i < threadNumber; i++) {
             ThreadPoolManager.getThreadPool().execute(new ConsumerQueueThread());
         }
         log.info("end testExcuteThread");

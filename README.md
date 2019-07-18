@@ -4,3 +4,4 @@
 ##### [List转换](https://github.com/Mrtanglei/java8/blob/master/src/main/java/com/lei/tang/java8/orange/ListConversion.java)
 ##### [方法引用](https://github.com/Mrtanglei/java8/blob/master/src/main/java/com/lei/tang/java8/demo/MethodReferences.java)
 ##### [List排序](https://github.com/Mrtanglei/java8/blob/master/src/main/java/com/lei/tang/java8/demo/DefaultFunctional.java)
+##### [线程池](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/threadpool)，[详细介绍](https://blog.csdn.net/weixin_41131531/article/list/1?)

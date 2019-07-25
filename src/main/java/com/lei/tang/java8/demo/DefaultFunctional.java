@@ -40,7 +40,7 @@ public class DefaultFunctional {
         Orange orange2 = new Orange();
         orange2.setWeight(10.00);
         biConsumer(orange1, orange2,
-                (Orange orange11, Orange orange22) -> orange11.setWeight(orange11.getWeight()+orange22.getWeight()));
+                (Orange orange11, Orange orange22) -> orange11.setWeight(orange11.getWeight() + orange22.getWeight()));
         System.out.println(orange1.getWeight());
     }
 
@@ -77,7 +77,7 @@ public class DefaultFunctional {
         biConsumer.accept(t, u);
     }
 
-    public void sort(){
+    public void sort() {
         // 数值排序
         List<Integer> list = Lists.newArrayList(3, 1, 2, -1);
         // 正序
@@ -100,17 +100,18 @@ public class DefaultFunctional {
         List<Orange> list1 = Lists.newArrayList(orange, orange1, orange2);
         // 正序
         // weight属性为基本类型
-        list1.sort((Orange s, Orange o) -> s.getWeight() > o.getWeight() ? 1 : s.getWeight().doubleValue() == o.getWeight().doubleValue() ? 0 :
-                -1);
+        list1.sort((Orange s, Orange o) -> s.getWeight() > o.getWeight() ? 1 :
+                s.getWeight().doubleValue() == o.getWeight().doubleValue() ? 0 : -1);
         // weight属性为封装类型
-        list1.sort((o1,o2)->o1.getWeight().compareTo(o2.getWeight()));
+        list1.sort((o1, o2) -> o1.getWeight().compareTo(o2.getWeight()));
         // 2.34-1.34-1.2
         list1.forEach((o) -> System.out.println(o.getWeight()));
         // 倒叙
         // weight属性为基本类型
-        list1.sort((Orange s, Orange o) -> o.getWeight() > s.getWeight() ? 1 : o.getWeight().doubleValue() == s.getWeight().doubleValue() ? 0 : -1);
+        list1.sort((Orange s, Orange o) -> o.getWeight() > s.getWeight() ? 1 :
+                o.getWeight().doubleValue() == s.getWeight().doubleValue() ? 0 : -1);
         // weight属性为封装类型
-        list1.sort((o1,o2)->o2.getWeight().compareTo(o1.getWeight()));
+        list1.sort((o1, o2) -> o2.getWeight().compareTo(o1.getWeight()));
         //1.2-1.34-2.34
         list1.sort((Orange s, Orange o) -> o.getWeight().compareTo(s.getWeight()));
         list1.forEach((o) -> System.out.println(o.getWeight()));

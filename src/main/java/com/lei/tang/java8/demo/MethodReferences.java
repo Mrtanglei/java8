@@ -26,30 +26,30 @@ public class MethodReferences {
         //指向现有对象的实例方法的方法引用
         Orange orange = new Orange();
         orange.setWeight(10.34);
-        Supplier<Double> supplier = ()->orange.getWeight();
-        supplier = orange :: getWeight;
+        Supplier<Double> supplier = () -> orange.getWeight();
+        supplier = orange::getWeight;
 
         //构造函数引用
         //无参构造函数
-        Supplier<Orange> supplierConstructor = ()->new Orange();
+        Supplier<Orange> supplierConstructor = () -> new Orange();
         Orange orangeConstructor = supplierConstructor.get();
 
         supplierConstructor = Orange::new;
         orangeConstructor = supplierConstructor.get();
 
         //一个参数
-        Function<Double,Orange> functionConstructor = Orange::new;
+        Function<Double, Orange> functionConstructor = Orange::new;
         orangeConstructor = functionConstructor.apply(10.00);
 
-        functionConstructor = (weight)-> new Orange(weight);
+        functionConstructor = (weight) -> new Orange(weight);
         orangeConstructor = functionConstructor.apply(10.00);
 
         //2个参数
-        BiFunction<Double,String,Orange> biFunctionConstructor = Orange::new;
-        orangeConstructor = biFunctionConstructor.apply(10.00,"red" );
+        BiFunction<Double, String, Orange> biFunctionConstructor = Orange::new;
+        orangeConstructor = biFunctionConstructor.apply(10.00, "red");
 
-        biFunctionConstructor = (weight,color)->new Orange(weight,color);
-        orangeConstructor = biFunctionConstructor.apply(10.00,"red" );
+        biFunctionConstructor = (weight, color) -> new Orange(weight, color);
+        orangeConstructor = biFunctionConstructor.apply(10.00, "red");
 
         //超过二个参数的可自定义函数接口:BiiFunction
     }

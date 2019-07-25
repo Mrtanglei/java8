@@ -10,6 +10,6 @@ public class OrangeWeightPredicate implements OrangePredicate {
 
     @Override
     public boolean fileter(Orange orange, Object obj) {
-        return obj != null && orange.getWeight() > (Double)obj;
+        return obj != null && orange.getWeight() > (Double) obj;
     }
 }

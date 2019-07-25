@@ -1,4 +1,4 @@
-package com.lei.tang.java8.threadpool;
+package com.lei.tang.java8.thread.threadpool;
 
 import lombok.extern.slf4j.Slf4j;
 

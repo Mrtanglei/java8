@@ -1,6 +1,6 @@
 package com.lei.tang.java8.controller;
 
-import com.lei.tang.java8.threadpool.ThreadPoolService;
+import com.lei.tang.java8.thread.threadpool.ThreadPoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

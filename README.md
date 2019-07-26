@@ -9,3 +9,4 @@
  * [等待通知机制](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/communication/ThreadWaitNotify.java)
  [详细介绍](https://blog.csdn.net/weixin_41131531/article/list/1?)
  * [join方法](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/communication/JoinThread.java)  [详细介绍](https://blog.csdn.net/weixin_41131531/article/list/1?)
+ * [Java线程状态](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/ThreadStatus.java)  [详细介绍](https://blog.csdn.net/weixin_41131531/article/list/1?)

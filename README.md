@@ -1,4 +1,4 @@
-### java8 [详细介绍](https://blog.csdn.net/weixin_41131531/column/info/39392)
+### Java8 [详细介绍](https://blog.csdn.net/weixin_41131531/column/info/39392)
 ##### [行为参数化demo](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/orange)
 ##### [java8内置函数式接口](https://github.com/Mrtanglei/java8/blob/master/src/main/java/com/lei/tang/java8/demo/DefaultFunctional.java)
 ##### [List转换](https://github.com/Mrtanglei/java8/blob/master/src/main/java/com/lei/tang/java8/orange/ListConversion.java)

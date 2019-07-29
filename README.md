@@ -9,3 +9,6 @@
  * [join方法](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/communication/JoinThread.java)
  * [Java线程状态](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/ThreadStatus.java)
  * [线程池](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/threadpool/threadpool)
+ * [volatile共享内存实现线程通信](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread
+ /communication
+ /Volatile.java)

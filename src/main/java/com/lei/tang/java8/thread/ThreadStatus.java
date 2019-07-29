@@ -14,8 +14,8 @@ public class ThreadStatus {
     public static void main(String[] args) throws InterruptedException {
         Thread threadA = new Thread(new ThreadA());
         log.info("threadA status [{}]",threadA.getState());
-        Thread threadB = new Thread(new ThreadB());
-        log.info("threadB status [{}]",threadB.getState());
+        Thread threadB = new Thread(new ThreadB());log.info("threadB status [{}]",threadB.getState());
+
         threadA.start();
         threadB.start();
         while (threadA.isAlive() || threadB.isAlive()){

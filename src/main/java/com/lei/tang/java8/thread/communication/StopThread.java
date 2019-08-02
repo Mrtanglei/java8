@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 public class StopThread implements Runnable {
 
     public static void main(String[] args) throws InterruptedException {
-        Thread thread =new Thread(new StopThread());
+        Thread thread = new Thread(new StopThread());
         thread.start();
         log.debug("main Thread");
         thread.interrupt();
@@ -24,7 +24,7 @@ public class StopThread implements Runnable {
     @Override
     public void run() {
         for (int i = 1; i <= 10 && !Thread.currentThread().isInterrupted(); i++) {
-            log.debug("i = "+i);
+            log.debug("i = " + i);
         }
         log.debug("Thread end");
     }

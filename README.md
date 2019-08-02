@@ -12,3 +12,4 @@
  * [volatile共享内存实现线程通信](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/communication/Volatile.java)
  * [CountDownLatch倒计数器并发工具](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/communication/CountDownLatchDemo.java)
  * [CyclicBarrier栅栏](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/communication/CyclicBarrierDemo.java)
+ * [线程响应中断](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/communication/StopThread.java)

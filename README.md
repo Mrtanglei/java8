@@ -13,3 +13,4 @@
  * [CountDownLatch倒计数器并发工具](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/communication/CountDownLatchDemo.java)
  * [CyclicBarrier栅栏](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/communication/CyclicBarrierDemo.java)
  * [线程响应中断](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/communication/StopThread.java)
+ * [管道通信](https://github.com/Mrtanglei/java8/tree/master/src/main/java/com/lei/tang/java8/thread/communication/PipeCommunication.java)

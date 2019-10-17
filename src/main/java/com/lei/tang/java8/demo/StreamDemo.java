@@ -1,10 +1,7 @@
 package com.lei.tang.java8.demo;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.*;
+import java.util.stream.*;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
@@ -139,33 +136,47 @@ public class StreamDemo {
         log.debug("===================");
         //最大值
         Optional<Integer> max = numbers.stream().reduce((a, b) -> a > b ? a : b);
-        log.debug("最大值：[{}]",max.get());
-        max = numbers.stream().reduce(Integer :: max);
-        log.debug("最大值：[{}]",max.get());
+        log.debug("最大值：[{}]", max.get());
+        max = numbers.stream().reduce(Integer::max);
+        log.debug("最大值：[{}]", max.get());
         // 获取peoples集合中最大年龄
-        max = peoples.stream().map(people -> people.getAge()).reduce(Integer :: max);
-        log.debug("最年龄：[{}]",max.get());
+        max = peoples.stream().map(people -> people.getAge()).reduce(Integer::max);
+        log.debug("最年龄：[{}]", max.get());
         log.debug("===================");
         //最小值
         Optional<Integer> min = numbers.stream().reduce((a, b) -> a < b ? a : b);
-        log.debug("最大值：[{}]",min.get());
-        min = numbers.stream().reduce(Integer :: min);
-        log.debug("最大值：[{}]",min.get());
+        log.debug("最大值：[{}]", min.get());
+        min = numbers.stream().reduce(Integer::min);
+        log.debug("最大值：[{}]", min.get());
         // 获取peoples集合中最大年龄
-        min = peoples.stream().map(people -> people.getAge()).reduce(Integer :: min);
-        log.debug("最年龄：[{}]",min.get());
+        min = peoples.stream().map(people -> people.getAge()).reduce(Integer::min);
+        log.debug("最年龄：[{}]", min.get());
+    }
+
+    /**
+     * 数值流
+     */
+    private static void numberStream() {
+        List<People> peoples = Lists.newArrayList(new People(19, "张三"), new People(23, "李四"), new People(15, "王二"),
+                new People(30, "麻子"));
+        //常用数值流操作有：mapToInt(操作int)、mapToDouble(操作double)、mapToLong(操作long)
+        //求和
+        log.debug("求和 {}", peoples.stream().mapToInt(People::getAge).sum());
+        //最大值，没有数据时可通过max.orElse(0)给定默认值
+        OptionalInt max = peoples.stream().mapToInt(People::getAge).max();
+        log.debug("最大值 {}", max.getAsInt());
+        //最小值，与最大值操作一致
+        log.debug("最小值 {}", peoples.stream().mapToInt(People::getAge).min().getAsInt());
+        //平均值
+        log.debug("平均值 {}", peoples.stream().mapToInt(People::getAge).average().getAsDouble());
+        //转换回对象流
+        Stream<Integer> stream = peoples.stream().mapToInt(People::getAge).boxed();
+        //数值范围：IntStream和LongStream有静态方法range(int startInclusive, int endInclusive)和rangeClosed(int startInclusive,
+        // int endInclusive)，接收开始和结束值两个参数，区别在于range方法不包括结束值，而rangeClosed包括结束值
+        IntStream.range(1, 11).boxed().forEach(integer -> log.debug(String.valueOf(integer)));
     }
 
     public static void main(String[] args) {
-        try {
-            try {
-                int i = 1/0;
-            }catch (Exception e){
-                log.error("1号catch", e);
-                int i = 1/0;
-            }
-        }catch (Exception e){
-            log.error("2号catch", e);
-        }
+        numberStream();
     }
 }

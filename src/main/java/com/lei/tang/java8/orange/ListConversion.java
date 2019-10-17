@@ -1,11 +1,8 @@
 package com.lei.tang.java8.orange;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
-import com.google.common.collect.Lists;
 import com.lei.tang.java8.domain.Orange;
 
 /**
@@ -13,12 +10,6 @@ import com.lei.tang.java8.domain.Orange;
  * @date 2019/6/27
  */
 public class ListConversion {
-
-    public static void main(String[] args) {
-        List<Orange> list = Lists.newArrayList(new Orange(10.00, "red"), new Orange(100.00, "red"), new Orange(20.00,
-                "green"));
-        listConversionToSet(list);
-    }
 
     public static void listConversionToMap(List<Orange> list) {
         //颜色作为key，重量作为value,如果key重复，取较重的值（注意：key重复不做处理会报-->java.lang.IllegalStateException: Duplicate key）

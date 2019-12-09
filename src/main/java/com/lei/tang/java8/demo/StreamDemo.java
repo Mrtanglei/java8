@@ -1,5 +1,7 @@
 package com.lei.tang.java8.demo;
 
+import java.io.*;
+import java.nio.charset.Charset;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -10,6 +12,7 @@ import com.google.common.collect.Sets;
 import com.lei.tang.java8.domain.Orange;
 import com.lei.tang.java8.domain.People;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.StringUtils;
 
 /**
  * @author tanglei
@@ -196,6 +199,21 @@ public class StreamDemo {
     }
 
     public static void main(String[] args) {
-        constuctStream();
+        File file = new File("/Users/tanglei/Desktop/cs.txt");
+        try {
+            InputStream inputStream = new FileInputStream(file);
+            Reader reader = new InputStreamReader(inputStream, Charset.defaultCharset());
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            String s = bufferedReader.readLine();
+            while (StringUtils.hasText(s)){
+                s = new String(s.getBytes(), Charset.defaultCharset());
+                System.out.println(s);
+                s=bufferedReader.readLine();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

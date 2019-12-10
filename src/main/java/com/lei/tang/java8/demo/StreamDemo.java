@@ -197,23 +197,4 @@ public class StreamDemo {
         Stream.iterate(new int[]{0,1}, array->new int[]{array[1],array[0]+array[1]}).limit(10).map(array->array[0]).forEach(System.out::println);
         Stream.generate(() -> 2).limit(5).forEach(System.out::println);
     }
-
-    public static void main(String[] args) {
-        File file = new File("/Users/tanglei/Desktop/cs.txt");
-        try {
-            InputStream inputStream = new FileInputStream(file);
-            Reader reader = new InputStreamReader(inputStream, Charset.defaultCharset());
-            BufferedReader bufferedReader = new BufferedReader(reader);
-            String s = bufferedReader.readLine();
-            while (StringUtils.hasText(s)){
-                s = new String(s.getBytes(), Charset.defaultCharset());
-                System.out.println(s);
-                s=bufferedReader.readLine();
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

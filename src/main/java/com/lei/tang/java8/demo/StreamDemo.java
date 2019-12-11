@@ -1,18 +1,18 @@
 package com.lei.tang.java8.demo;
 
-import java.io.*;
-import java.nio.charset.Charset;
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.lei.tang.java8.domain.Orange;
 import com.lei.tang.java8.domain.People;
+import com.lei.tang.java8.utils.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.util.StringUtils;
 
 /**
  * @author tanglei
@@ -188,13 +188,14 @@ public class StreamDemo {
         //使用静态方法Arrays.stream从数组创建一个流。它接受一个数组作为参数
         stringStream = Arrays.stream(new String[]{"我", "是", "字", "符", "串"});
         //Files.lines得到一个由文件每行成为一个元素的流
-//        try (Stream<String> lines = Files.lines(Paths.get("data.tx"), Charset.defaultCharset())) {
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-        //Stream API提供了两个静态方法来从函数生成流:Stream.iterate和Stream.generate。 这两个操作可以创建所谓的无限流:不像从固定集合创建的流那样有固定大小的流。由iterate 2 和generate产生的流会用给定的函数按需创建值，因此可以无穷无尽地计算下去!一般来说， 应该使用limit(n)来对这种流加以限制，以避免打印无穷多个值。
-        Stream.iterate(new int[]{0,1}, array->new int[]{array[1],array[0]+array[1]}).limit(10).map(array->array[0]).forEach(System.out::println);
+        //        try (Stream<String> lines = Files.lines(Paths.get("data.tx"), Charset.defaultCharset())) {
+        //
+        //        } catch (IOException e) {
+        //            e.printStackTrace();
+        //        }
+        //Stream API提供了两个静态方法来从函数生成流:Stream.iterate和Stream.generate。 这两个操作可以创建所谓的无限流:不像从固定集合创建的流那样有固定大小的流。由iterate 2
+        // 和generate产生的流会用给定的函数按需创建值，因此可以无穷无尽地计算下去!一般来说， 应该使用limit(n)来对这种流加以限制，以避免打印无穷多个值。
+        Stream.iterate(new int[]{0, 1}, array -> new int[]{array[1], array[0] + array[1]}).limit(10).map(array -> array[0]).forEach(System.out::println);
         Stream.generate(() -> 2).limit(5).forEach(System.out::println);
     }
 }
